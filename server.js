@@ -17,7 +17,10 @@ app.get('/', (req, res) => {
 
 // get route for drinks
 app.get('/drinks', (req, res) => {
-    res.render('./drinks_index.ejs')
+    res.render(
+        './drinks_index.ejs',
+        { drinkList : drinks }
+    )
 })
 
 // listen to port

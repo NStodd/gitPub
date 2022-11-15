@@ -15,5 +15,13 @@
 <body>
     <h1>Welcome to the gitPub Drinks List!</h1>
 
+    <ul>
+        <% for(let i = 0; i < drinkList.length; i++) { %>
+            <li>
+                <!-- TODO: make it capitalie every word. -->
+                <%=drinkList[i].name[0].toUpperCase() +  drinkList[i].name.substring(1) %>
+            </li>
+        <% } %>
+    </ul>
 </body>
 </html>
