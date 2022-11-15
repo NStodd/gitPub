@@ -13,9 +13,7 @@
     <title>GitPub Drinks List</title>
 </head>
 <body>
-    <h1>Welcome to the gitPub!</h1>
-
-    <h2> Drink List </h2>
+    <h1>Welcome to the gitPub Drinks List!</h1>
 
     <ul>
         <% for(let i = 0; i < drinkList.length; i++) { %>
@@ -23,17 +21,6 @@
                 <!-- TODO: make it capitalie every word. -->
                 <%const drinkName = drinkList[i].name[0].toUpperCase() +  drinkList[i].name.substring(1)%>
                 <a href="/drinks/<%=i%>"><%=drinkName%></a>
-            </li>
-        <% } %>
-    </ul>
-
-    <h2> Food List </h2>
-    <ul>
-        <% for(let i = 0; i < foodList.length; i++) { %>
-            <li>
-                <!-- TODO: make it capitalie every word. -->
-                <%const foodName = foodList[i].name[0].toUpperCase() +  foodList[i].name.substring(1)%>
-                <a href="/food/<%=i%>"><%=foodName%></a>
             </li>
         <% } %>
     </ul>

@@ -10,6 +10,9 @@ const PORT = 3000
 // connect to our drinks data
 const drinks = require('./models/drinks.js')
 
+// connect the food data
+const food = require('./models/food.js')
+
 // get route for the landing page
 app.get('/', (req, res) => {
     res.send("Welcome to the gitPub App!")
@@ -19,13 +22,34 @@ app.get('/', (req, res) => {
 app.get('/drinks', (req, res) => {
     res.render(
         './drinks_index.ejs',
-        { drinkList : drinks }
+        { drinkList : drinks,
+          foodList : food
+        }
     )
 })
 
+
+// Show route for drinks
 app.get('/drinks/:id', (req, res) => {
-    res.send(req.params.id)
+    res.render(
+        './drinks_show.ejs',
+        {
+            drinkList : drinks,
+            index : req.params.id
+        })
 })
+
+// show route for food
+app.get('/food/:id', (req,res) => {
+    res.render (
+        './food_show.ejs',
+        {
+            foodList : food,
+            index : req.params.id
+        }
+    )
+})
+
 
 // listen to port
 app.listen(PORT, () => {
